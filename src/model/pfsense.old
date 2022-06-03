@@ -1,7 +1,7 @@
 import time
 import pandas as pd
 
-from controller import Interation
+from interation import Interation
 
 
 from dotenv import dotenv_values
@@ -19,18 +19,19 @@ necessary files:
 
 """
 
-class Pfsense:
+class Pfsense_inutilizavel:
     
     def __init__(self, table_name):
-        self.interation = Interation()
-        self.interation.click_advanced()
         
+        #mudar o click advance para ignroar quando nao existir     
         self.table_name = table_name
         
+        #tirar daqui
         self.df = pd.read_excel(f'{table_name}.xlsx')
         self.config = dotenv_values()
                               
-    
+                            
+       
     def login(self, username, password):
         self.interation.user(username)
         self.interation.password(password)
@@ -38,10 +39,7 @@ class Pfsense:
 
     
     
-    def select_dhcp_server(self):
-        self.interation.select_service()
-        self.interation.select_dhcp_server()
-        self.interation.add_button_dhcp()
+    
 
     
     def register_data(self):
