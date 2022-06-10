@@ -90,8 +90,8 @@ class PFSense:
 if __name__ == '__main__':
     pfsense = PFSense()
     pfsense.skip_certificate()     
-    pfsense.setUser('admin')
-    pfsense.setPassword('nonpronobislaboramus')
+    pfsense.setUser()
+    pfsense.setPassword()
     pfsense.sign_in()
     time.sleep(10)
     pfsense.driver.close()
